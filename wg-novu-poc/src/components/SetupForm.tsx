@@ -41,24 +41,24 @@ const SetupForm: React.FC = () => {
 
       <FormControl isInvalid={!!errors.backendUrl}>
         <FormLabel>backendUrl</FormLabel>
-        <Input {...register("backendUrl", { required: true })} />
+        <Input {...register("backendUrl")} />
         <FormErrorMessage>{errors.backendUrl?.message}</FormErrorMessage>
       </FormControl>
 
       <FormControl isInvalid={!!errors.socketUrl}>
         <FormLabel>socketUrl</FormLabel>
-        <Input {...register("socketUrl", { required: true })} />
+        <Input {...register("socketUrl")} />
         <FormErrorMessage>{errors.socketUrl?.message}</FormErrorMessage>
       </FormControl>
 
       <FormControl isInvalid={!!errors.subscriberId}>
-        <FormLabel>subscriberId</FormLabel>
+        <FormLabel>subscriberId *</FormLabel>
         <Input {...register("subscriberId", { required: true })} />
         <FormErrorMessage>{errors.subscriberId?.message}</FormErrorMessage>
       </FormControl>
 
       <FormControl isInvalid={!!errors.applicationIdentifier}>
-        <FormLabel>applicationIdentifier</FormLabel>
+        <FormLabel>applicationIdentifier *</FormLabel>
         <Input {...register("applicationIdentifier", { required: true })} />
         <FormErrorMessage>
           {errors.applicationIdentifier?.message}

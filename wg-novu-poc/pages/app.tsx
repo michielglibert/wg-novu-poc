@@ -35,8 +35,8 @@ export default function Setup() {
       </Head>
       <Center as="main" height="100vh">
         <NovuProvider
-          backendUrl={novuConfig!.backendUrl}
-          socketUrl={novuConfig!.socketUrl}
+          backendUrl={novuConfig.backendUrl}
+          socketUrl={novuConfig.socketUrl}
           subscriberId={novuConfig!.subscriberId}
           applicationIdentifier={novuConfig!.applicationIdentifier}
         >
