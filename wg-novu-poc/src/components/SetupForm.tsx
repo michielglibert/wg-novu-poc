@@ -39,18 +39,6 @@ const SetupForm: React.FC = () => {
     <VStack p="12" borderRadius="md">
       <Heading>Credentials</Heading>
 
-      <FormControl isInvalid={!!errors.backendUrl}>
-        <FormLabel>backendUrl</FormLabel>
-        <Input {...register("backendUrl")} />
-        <FormErrorMessage>{errors.backendUrl?.message}</FormErrorMessage>
-      </FormControl>
-
-      <FormControl isInvalid={!!errors.socketUrl}>
-        <FormLabel>socketUrl</FormLabel>
-        <Input {...register("socketUrl")} />
-        <FormErrorMessage>{errors.socketUrl?.message}</FormErrorMessage>
-      </FormControl>
-
       <FormControl isInvalid={!!errors.subscriberId}>
         <FormLabel>subscriberId *</FormLabel>
         <Input {...register("subscriberId", { required: true })} />
