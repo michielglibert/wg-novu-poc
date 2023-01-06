@@ -6,13 +6,12 @@ import { useEffect, useState } from "react";
 import ErrorBoundary from "../src/components/ErrorBoundary";
 import NotificationsBell from "../src/components/NotificationsBell";
 import SettingsButton from "../src/components/SettingsButton";
+import UseNotificationListener from "../src/components/UseNotificationListener";
 import useNewNotification from "../src/hooks/useNewNotification";
 import { NovuConfiguration } from "../src/types/Novu";
 import { loadConfig } from "../src/utils/storageService";
 
 export default function Setup() {
-  useNewNotification();
-
   const { push } = useRouter();
 
   const [novuConfig, setNovuConfig] = useState<NovuConfiguration>();
@@ -38,6 +37,7 @@ export default function Setup() {
           subscriberId={novuConfig!.subscriberId}
           applicationIdentifier={novuConfig!.applicationIdentifier}
         >
+          <UseNotificationListener />
           You can now trigger notifications! Using the default UI
           <HStack spacing="4" pos="absolute" top="2" right="2">
             <NotificationsBell />

@@ -7,8 +7,10 @@ const useNewNotification = () => {
   const toast = useToast();
 
   useEffect(() => {
+    console.log(socket);
     if (socket) {
-      socket.on("notification", (data) => {
+      console.log("yes");
+      socket.on("notification_received", (data) => {
         toast({
           description:
             "New notification, you can find the data in your console.",
@@ -19,7 +21,7 @@ const useNewNotification = () => {
 
     return () => {
       if (socket) {
-        socket.off("notification");
+        socket.off("notification_received");
       }
     };
   }, [socket, toast]);
